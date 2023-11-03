@@ -1,0 +1,68 @@
+.form-container {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+  align-content: center;
+  margin: 2rem 0;
+}
+
+.form-container .form-inner {
+  /* background-image: linear-gradient(to right, #f4fcff, #c8f3ff); */
+  background-color: #f6f6f6;
+  border-radius: 10px;
+  padding: 2rem;
+  width: 70%;
+}
+
+.form-container .form-inner .form-group-input {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.form-container .form-inner .form-group-input .half-form-input {
+  width: 50%;
+}
+
+.form-container .form-inner .full-form-input {
+  width: 70%;
+  margin: 1rem 0;
+}
+
+.form-container .form-inner .form-btn {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+@media only screen and (max-width: 800px) {
+  .form-container .form-inner {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .form-container .form-inner {
+    padding: 2rem 1rem;
+  }
+  .form-container .form-inner .form-group-input {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+
+  .form-container .form-inner .form-group-input .half-form-input {
+    width: 100%;
+  }
+
+  .form-container .form-inner .full-form-input {
+    width: 100%;
+    margin: 1.5rem 0;
+  }
+}

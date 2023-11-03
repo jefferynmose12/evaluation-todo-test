@@ -1,0 +1,13 @@
+.customBtn {
+    background-color: #245293;
+    outline: none;
+    border: none;
+    color: #fff;
+    height: 40px;
+    width: 120px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.08);
+}

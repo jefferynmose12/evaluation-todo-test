@@ -1,0 +1,37 @@
+.customInput-contain {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  width: 100%;
+}
+
+.customInput-contain .input-con {
+  padding-left: 14px;
+  padding-right: 10px;
+  border-radius: 5px;
+  background: #fff;
+  height: 40px;
+  outline: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.customInput-contain .input-con input {
+  border: none;
+  outline: none;
+}
+
+.customInput-contain .error {
+  color: red;
+  font-size: 10px;
+  margin-top: -7px;
+}
+
+.error-visible {
+  visibility: visible;
+}
+
+.error-invisible {
+  visibility: hidden;
+}

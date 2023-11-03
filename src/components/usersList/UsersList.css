@@ -1,0 +1,42 @@
+.users-list-bg .candidates {
+  border: 1px solid rgb(223, 223, 223);
+  border-radius: 10px;
+}
+
+.users-list-bg .candidates .candidates-headings {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f5f7fa;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 1rem 1rem 1rem;
+  gap: 1rem;
+}
+
+.users-list-bg .candidates .candidates-headings span {
+  width: 15.6%;
+  color: #1c2533;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  text-align: center;
+}
+
+.users-list-bg .candidates .candidates-headings .email {
+  width: 22%;
+}
+
+@media only screen and (max-width: 850px) {
+  .users-list-bg .candidates .candidates-headings {
+    display: none;
+  }
+
+  .users-list-bg .candidates {
+    border: none;
+  }
+
+  .users-list-bg .candidates .candidates-box {
+    border-top: 1px solid #d8dde5;
+  }
+}

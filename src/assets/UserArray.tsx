@@ -1,0 +1,42 @@
+export const userArray = [
+  {
+    id: 1,
+    firstName: "Adeola",
+    lastName: "William",
+    email: "Adeolahush@gmail.com",
+    role: { label: "Doctor", value: "Doctor" },
+    status: { label: "OFFLINE", value: "OFFLINE" },
+  },
+  {
+    id: 2,
+    firstName: "Yinka",
+    lastName: "Hope",
+    email: "Hopeyinka@gmail.com",
+    role: { label: "Farmer", value: "Farmer" },
+    status: { label: "ONLINE", value: "ONLINE" },
+  },
+  {
+    id: 3,
+    firstName: "Joseph",
+    lastName: "Stainless",
+    email: "josephone@gmail.com",
+    role: { label: "Doctor", value: "Doctor" },
+    status: { label: "OFFLINE", value: "OFFLINE" },
+  },
+  {
+    id: 4,
+    firstName: "Kayode",
+    lastName: "Benson",
+    email: "kayode1@gmail.com",
+    role: { label: "Mechanic", value: "Mechanic" },
+    status: { label: "ONLINE", value: "ONLINE" },
+  },
+  {
+    id: 5,
+    firstName: "Stephen",
+    lastName: "Brains",
+    email: "stephen1@gmail.com",
+    role: { label: "Teacher", value: "Teacher" },
+    status: { label: "OFFLINE", value: "OFFLINE" },
+  },
+];
