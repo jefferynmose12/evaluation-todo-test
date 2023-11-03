@@ -27,7 +27,7 @@ const UsersList = () => {
         </div>
         <div className="candidates-box">
           {users
-            .filter((user: any) => user[value].toLowerCase().includes(search))
+            .filter((user: any) => user[value].toLowerCase().includes(search.toLowerCase()))
             .filter((user: any) => user[role]['value'].includes(roleValue))
             .filter((user: any) => user[status]['value'].includes(statusValue))
             .map(
