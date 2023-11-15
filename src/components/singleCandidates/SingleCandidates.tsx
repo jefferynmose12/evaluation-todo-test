@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { SingleCandidatesProps } from "../../type";
 import "./SingleCandidates.css";
 import { AiOutlineCopy } from "react-icons/ai";
@@ -29,21 +29,28 @@ const SingleCandidates = ({
 
   const { setEditUser, editUserHandle, deleteUser } = useUserHandle();
 
-  const onClickEdit = (id: number) => {
-    setToggleEditUser(true);
-    setEditUser(id);
-  };
+  const onClickEdit = useCallback(
+    (id: number) => {
+      setToggleEditUser(true);
+      setEditUser(id);
+    },
+    [setEditUser]
+  );
+
+  const handleCopy = useCallback(() => {
+    setCopy(true);
+  }, []);
 
   const copyText = firstName + " " + lastName + " " + email;
 
   const { values, handleChange, handleSubmit, setFieldTouched, setFieldValue } =
     useFormik({
       initialValues: {
-        firstName: "",
-        lastName: "",
-        email: "",
-        role: null,
-        status: null,
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        role: role,
+        status: status,
       },
       onSubmit: (values: any) => {
         editUserHandle(values);
@@ -181,15 +188,21 @@ const SingleCandidates = ({
           ) : (
             <div className="action">
               <CopyToClipboard text={copyText}>
-                <button className="icon-btn" onClick={() => setCopy(true)}>
+                <button className="icon-btn" onClick={handleCopy}>
                   {copy ? <ImCheckmark color="green" /> : <AiOutlineCopy />}
                 </button>
               </CopyToClipboard>
 
-              <div className="icon-btn edit-icon" onClick={() => onClickEdit(id)}>
+              <div
+                className="icon-btn edit-icon"
+                onClick={() => onClickEdit(id)}
+              >
                 <CiEdit />
               </div>
-              <div className="icon-btn delete-icon" onClick={() => handleDeleteUser(id)}>
+              <div
+                className="icon-btn delete-icon"
+                onClick={() => handleDeleteUser(id)}
+              >
                 <RiDeleteBin6Line />
               </div>
             </div>

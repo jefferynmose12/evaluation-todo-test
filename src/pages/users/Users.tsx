@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import UsersList from "../../components/usersList/UsersList";
 import CustomButton from "../../components/customButton/CustomButton";
 import "./Users.css";
@@ -20,15 +20,22 @@ const Users = () => {
     handleChange,
     handleChangeBy,
     handleFilterByRole,
-    handleFilterByStatus
+    handleFilterByStatus,
   } = useStoreContext();
 
-  const searchPlaceholder = searchBy?.value === 'firstName' ? 'Search by First Name' : 'Search by Last Name'
+  const searchPlaceholder =
+    searchBy?.value === "firstName"
+      ? "Search by First Name"
+      : "Search by Last Name";
+
+  const handleToForm = useCallback(() => {
+    navigate("/form");
+  }, [navigate]);
 
   return (
     <div className="user-container">
       <div className="users-header">
-        <CustomButton title="Create a user" onClick={() => navigate("/form")} />
+        <CustomButton title="Create a user" onClick={handleToForm} />
 
         <div className="users-header-inputs">
           <div className="each-input">
@@ -39,8 +46,8 @@ const Users = () => {
               type="text"
               onChange={(e) => handleChange(e)}
               inputbgStyles={{
-                height: '38px',
-                marginTop: '3px'
+                height: "38px",
+                marginTop: "3px",
               }}
             />
           </div>

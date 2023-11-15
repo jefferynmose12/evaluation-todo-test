@@ -2,7 +2,7 @@ import { memo } from "react";
 import "./CustomInput.css";
 import { CustomInputProps } from "../../type";
 
-const CustomInput = ({
+const CustomInput = memo(({
   label,
   placeholder,
   width,
@@ -59,6 +59,8 @@ const CustomInput = ({
       </span>
     </div>
   );
-};
+}, (prevProps: CustomInputProps, nextProps: CustomInputProps) => {
+  return prevProps?.value === nextProps?.value
+});
 
-export default memo(CustomInput);
+export default CustomInput;

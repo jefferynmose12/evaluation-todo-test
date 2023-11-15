@@ -7,10 +7,15 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import useUserHandle from "../../hooks/useUserHandle";
 import { roleOptions, statusOptions } from "../../assets/Options";
+import { useCallback } from "react";
 
 const Form = () => {
   const navigate = useNavigate();
   const { addUser } = useUserHandle();
+
+  const handleBack = useCallback(() => {
+    navigate("/");
+  }, [navigate]);
 
   const {
     values,
@@ -41,7 +46,7 @@ const Form = () => {
     }),
     onSubmit: (values: any) => {
       addUser(values);
-      navigate("/")
+      navigate("/");
     },
   });
 
@@ -54,7 +59,7 @@ const Form = () => {
           color: " #245293",
           border: "1px solid #245293",
         }}
-        onClick={() => navigate("/")}
+        onClick={handleBack}
       />
       <div className="form-container">
         <div className="form-inner">

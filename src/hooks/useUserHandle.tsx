@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { userArray } from "../assets/UserArray";
 import { AddUserProps } from "../type";
 import { useStoreContext } from "../context/context";
@@ -34,7 +34,7 @@ const useUserHandle = () => {
     setUsers(updatedUsers)
   }
 
-  const editUserHandle = (input: AddUserProps) => {
+  const editUserHandle = useCallback((input: AddUserProps) => {
     const editedUser = {
       id: editUser,
       firstName: input?.firstName,
@@ -51,7 +51,7 @@ const useUserHandle = () => {
     newUsers[index] = editedUser;
 
     localStorage.setItem("users", JSON.stringify(newUsers));
-  };
+  }, [dataUsers, editUser]);
 
   return {
     addUser,
