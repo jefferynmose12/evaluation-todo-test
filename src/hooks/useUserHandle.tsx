@@ -46,11 +46,14 @@ const useUserHandle = () => {
 
     const newUsers = [...dataUsers];
 
-    const index = dataUsers.findIndex((user: any) => user.id === editUser);
+    const index = dataUsers.findIndex(
+      (user: AddUserProps) => user.id === editUser
+    );
 
     newUsers[index] = editedUser;
 
     localStorage.setItem("users", JSON.stringify(newUsers));
+    setUsers(newUsers);
   }, [dataUsers, editUser]);
 
   return {
